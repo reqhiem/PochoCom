@@ -4,6 +4,7 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
+//Define controllers
 let indexRouter = require('./controllers/index');
 let usersRouter = require('./controllers/users');
 

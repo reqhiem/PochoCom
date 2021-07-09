@@ -1,6 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  h2 Hola mundo
-  p Bienvenido a #{title}
+  main.container-fluid
+    div.row
+      h1(id='welcome')
+        | Bienvenido a
+    div.row
+      div.mx-auto(style='width=200px;')
+      h1.mx-auto(id='cs-week')
+        | Semana de la computación
+    div.row
+      | por Ciencia de la Computación - UNIVERSIDAD NACIONAL DE SAN AGUSTÍN DE AREQUIPA
+

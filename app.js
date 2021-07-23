@@ -4,9 +4,16 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
-//Define controllers
-let indexRouter = require('./controllers/index');
-let usersRouter = require('./controllers/users');
+// For session management
+let session = require('express-session');
+let sessionConnection = require('express-mysql-session');
+let config = require('./config/config');
+require('dotenv').config()
+
+
+// define the path of routes
+let indexRouter = require('./routes/index');
+let adminRouter = require('./routes/admin')
 
 let app = express();
 
@@ -20,8 +27,28 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//For session and Cookie management
+const options = {
+  host: 'localhost',
+  port: 3306,
+  user: 'root',
+  password: 'admin',
+  database: 'pc_session',
+  expiration: 86400000,
+}
+
+const sessionStore = new sessionConnection(options);
+app.use(session({
+  key: 'cookie_user_pc',
+  secret: 'cookie_secret_pc',
+  store: sessionStore,
+  resave: false,
+  saveUninitialized: false,
+}))
+
+//Listen the routes
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/admin/', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

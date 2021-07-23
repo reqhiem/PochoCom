@@ -23,14 +23,14 @@ El presente trabajo corresponde al proyecto final del curso de Ingeniería de So
 
 El sistema web en cuestión obedece al siguiente diagrama de Casos de Uso.
 
-![Diagrama de casos de uso]('./public/images/UML_DC.png')
+![Diagrama de casos de uso](./public/images/UML_DC.png)
 
 ### Diseño de modelos de datos
-![UML modelo de clases]('./public/images/UML_MD.png')
+![UML modelo de clases](./public/images/UML_MD.png)
 
 ### Diseño arquitectural
 
-![Visión general]('./public/images/AS_vision_general.png')
+![Visión general](./public/images/AS_vision_general.png)
 
 
-![Diseño significativo]('./public/images/AS_significativo.png.png')
+![Diseño significativo](./public/images/AS_significativo.png.png)

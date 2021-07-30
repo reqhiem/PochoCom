@@ -25,9 +25,14 @@ const logoutController = (req,res) => {
     res.redirect('/admin/login')
 }
 
+const actividadesController = (req,res) =>{
+    res.render('admin/actividades')
+}
+
 module.exports = {
     mainView,
     loginView,
     loginController,
-    logoutController
+    logoutController,
+    actividadesController
 }

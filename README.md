@@ -33,4 +33,21 @@ El sistema web en cuestión obedece al siguiente diagrama de Casos de Uso.
 ![Visión general](./public/images/AS_vision_general.png)
 
 
-![Diseño significativo](./public/images/AS_significativo.png.png)
+![Diseño significativo](./public/images/AS_significativo.png)
+
+
+## Estilos de programación:
+
+1. Kick Forward (Function composition):
+    Variation of the Pipeline style, with the following additional constraints:
+    
+    Each function takes an additional parameter, usually the last, which is
+    another function.
+2. Things (Objects and Object Interaction):
+    The larger problem is decomposed into things that make sense for the
+    problem domain.
+
+3. Constructivist (Adversity):
+    Every single function checks the sanity of its arguments and either
+    returns something sensible when the arguments are unreasonable or
+    assigns them reasonable values.

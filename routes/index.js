@@ -8,10 +8,5 @@ let generalControllers = require('../controllers/generalControllers')
 /*GET Home page*/
 router.get('/', generalControllers.homePageController)
 
-/*GET Login page*/
-router.get('/login', generalControllers.loginPageController)
-
-/*GET Register page*/
-router.get('/register', generalControllers.registerPageController)
 
 module.exports = router

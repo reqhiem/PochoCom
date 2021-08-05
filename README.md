@@ -43,15 +43,21 @@ El sistema web en cuestión obedece al siguiente diagrama de Casos de Uso.
     
     Each function takes an additional parameter, usually the last, which is
     another function.
+    
+    Ejemplo: para el ruteo, el módulo express toma como parámetro funciones Middleware y Funciones de controlador que manejan el flujo de los Objetos Request anh Response de HTTP. 
 2. Things (Objects and Object Interaction):
     The larger problem is decomposed into things that make sense for the
     problem domain.
-
+    
+   Ejemplo: Para la manipulación de los datos se consideró un enfoque orientado a Objetos.
+   
 3. Constructivist (Adversity):
     Every single function checks the sanity of its arguments and either
     returns something sensible when the arguments are unreasonable or
     assigns them reasonable values.
-
+        
+    Ejemplo: para el manejo de errores de tipo conexión y creación de datos se uso bloques `Try{}Catch(error){}`.
+    
 ## Conceptos DDD
 
 1. Repositories. Para la manipulación de datos, estos presentan un ciclo de vida que se gestiona mediante la herramienta ORM sequelize.

@@ -51,3 +51,11 @@ El sistema web en cuestión obedece al siguiente diagrama de Casos de Uso.
     Every single function checks the sanity of its arguments and either
     returns something sensible when the arguments are unreasonable or
     assigns them reasonable values.
+
+## Conceptos DDD
+
+1. Repositories. Para la manipulación de datos, estos presentan un ciclo de vida que se gestiona mediante la herramienta ORM sequelize.
+2. Entities. El lenguaje de programación orientada a objetos nos permite manipular los datos a un nivel de abstración de Entidades.
+3. Modules. El sistema presenta modularización de sus funcionalidades para poder gestionar los recursos de forma eficiente.
+
+De acuerdo al libro Domain-Driven Design de Abel Avram.

@@ -38,20 +38,20 @@ El sistema web en cuestión obedece al siguiente diagrama de Casos de Uso.
 
 ## Estilos de programación:
 
-1. Kick Forward (Function composition):
+1. **Kick Forward (Function composition)**:
     Variation of the Pipeline style, with the following additional constraints:
     
     Each function takes an additional parameter, usually the last, which is
     another function.
     
     Ejemplo: para el ruteo, el módulo express toma como parámetro funciones Middleware y Funciones de controlador que manejan el flujo de los Objetos Request anh Response de HTTP. 
-2. Things (Objects and Object Interaction):
+2. **Things (Objects and Object Interaction)**:
     The larger problem is decomposed into things that make sense for the
     problem domain.
     
    Ejemplo: Para la manipulación de los datos se consideró un enfoque orientado a Objetos.
    
-3. Constructivist (Adversity):
+3. **Constructivist (Adversity)**:
     Every single function checks the sanity of its arguments and either
     returns something sensible when the arguments are unreasonable or
     assigns them reasonable values.
@@ -60,8 +60,54 @@ El sistema web en cuestión obedece al siguiente diagrama de Casos de Uso.
     
 ## Conceptos DDD
 
-1. Repositories. Para la manipulación de datos, estos presentan un ciclo de vida que se gestiona mediante la herramienta ORM sequelize.
-2. Entities. El lenguaje de programación orientada a objetos nos permite manipular los datos a un nivel de abstración de Entidades.
-3. Modules. El sistema presenta modularización de sus funcionalidades para poder gestionar los recursos de forma eficiente.
+1. **Repositories**. Para la manipulación de datos, estos presentan un ciclo de vida que se gestiona mediante la herramienta **ORM sequelize**.
+2. **Entities**. El lenguaje de programación orientada a objetos nos permite manipular los datos a un nivel de abstración de Entidades.
+3. **Modules**. El sistema presenta modularización de sus funcionalidades para poder gestionar los recursos de forma eficiente.
 
 De acuerdo al libro Domain-Driven Design de Abel Avram.
+
+## Principios SOLID
+
+
+1. **Single Responsibility Principle**. Una clase debe tener una única responsabilidad.
+
+    **Ejemplo:** Las clases que abstraen los datos representan en esencia a una entidad.
+
+    ```
+    class Edicion extends Model {
+        /**
+        * Helper method for defining associations.
+        * This method is not a part of Sequelize lifecycle.
+        * The `models/index` file will call this method automatically.
+        */
+        static associate(models) {
+        Edicion.belongsToMany(models.Usuario,{
+            through: models.Registro
+        })
+
+        //Edicion-actividad
+        Edicion.hasMany(models.Actividad)
+        }
+    };
+    Edicion.init({
+        anio: DataTypes.STRING,
+        nombre: DataTypes.STRING,
+        fechaInicio: DataTypes.DATE,
+        fechaFin: DataTypes.DATE
+    }, {
+        sequelize,
+        modelName: 'Edicion',
+        timestamps: false,
+    });
+    
+    ```
+
+
+
+2. **Liskov Substitution Principle**. Una clase debe poder desempeñar las mismas funciones que la clase padre de la que heredó.
+
+    **Ejemplo:** La clase `Edición` es una clase que representa a la entidad Edición, este se extiende de una clase padre llamada `Model`, por lo que la clase `Edicion` desempeña todas las funcionalidades de la clase padre.
+
+3. **Dependency Inversion Principle**. Depende de las abstracciones y no las clases específicas.
+
+    **Ejemplo:** En la manipulación de código, la responsabilidad de las clases de los modelos de datos depende en esencia de la abstracción `Models` de a libreria ORM.

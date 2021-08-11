@@ -50,6 +50,7 @@ app.use(session({
 //Listen the routes
 app.use('/', visitorRouter);
 app.use('/admin/', adminRouter);
+app.use('/visitor/', visitorRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

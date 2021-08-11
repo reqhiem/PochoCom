@@ -140,8 +140,6 @@ const logoutController = (req,res) => {
 }
 
 
-
-
 module.exports = {
     mainView, agregarEdicion, eliminarEdicion,
     loginView,

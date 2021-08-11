@@ -1,0 +1,111 @@
+html{
+    font-size: 12px;
+    
+}
+
+body{
+    /*font-family: 'Roboto Mono', monospace;*/
+}
+
+#nav-bar-main{
+    color: white;
+
+}
+
+#title-main{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    
+}
+
+.nav-link{
+    color: white;
+    font-size: 14px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.nav-link:hover{
+    color: yellow;
+}
+
+#content-main{
+    background-color: white;
+}
+
+.banner-main{
+    background-image: url("https://image.freepik.com/vector-gratis/matriz-digital-blanca-fondo-numeros-codigo-binario_1017-25332.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.banner-label{
+    font-family: 'Oswald', cursive;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 80px;
+}
+
+
+.cronograma{
+    font-family: 'Roboto Mono', monospace;
+}
+
+.pon-card{
+    border-left: tomato 5px solid;
+}
+
+.pon-tipo-bread{
+    background-color: rgb(163, 219, 60);
+    font-style: italic;
+    color: rgb(43, 151, 133);
+    width: 50px;
+    height: 50px;
+    padding-left: 10px;
+}
+
+
+.pro-card{
+    border-left: rgb(126, 0, 0) 5px solid;
+}
+
+.pro-tipo-bread{
+    background-color: rgb(209, 177, 141);
+    font-style: italic;
+    color: rgb(118, 180, 231);
+    width: 50px;
+    height: 50px;
+    padding-left: 10px;
+}
+
+
+.pan-card{
+    border-left: rgb(0, 199, 50) 5px solid;
+}
+
+.pan-tipo-bread{
+    background-color: rgb(206, 110, 0);
+    font-style: italic;
+    color: rgb(46, 52, 141);
+    width: 50px;
+    height: 50px;
+    padding-left: 10px;
+}
+
+
+.con-card{
+    border-left: rgb(0, 156, 177) 5px solid;
+}
+
+.con-tipo-bread{
+    background-color: rgb(194, 183, 36);
+    font-style: italic;
+    color: rgb(0, 180, 120);
+    width: 50px;
+    height: 50px;
+    padding-left: 10px;
+}
+
+.time-span{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    color: rgb(56, 56, 56)
+}

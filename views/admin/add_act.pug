@@ -1,0 +1,226 @@
+extends layout
+
+
+block content
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card-header">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="protocolar-tab" data-bs-toggle="tab" data-bs-target="#protocolar" type="button" role="tab" aria-controls="protocolar" aria-selected="true">Protocolar</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="ponencia-tab" data-bs-toggle="tab" data-bs-target="#ponencia" type="button" role="tab" aria-controls="ponencia" aria-selected="false">Ponencia</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="panel-tab" data-bs-toggle="tab" data-bs-target="#panel" type="button" role="tab" aria-controls="panel" aria-selected="false">Panel</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="concurso-tab" data-bs-toggle="tab" data-bs-target="#concurso" type="button" role="tab" aria-controls="concurso" aria-selected="false">Concurso</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="protocolar" role="tabpanel" aria-labelledby="protocolar-tab">
+                            form(action="/admin/actividades/agregar/protocolar" method="POST")
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="ActName">Nombre:</label>
+                                        <input type="text" id="ActName" name="nombre" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="Desc">Descripcion:</label>
+                                        <input type="text" id="Desc" name="descripcion" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="fechaI">Fecha Inicio:</label>
+                                        <input type="date" id="fechaI" name="fechaInicio" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="fechaF">Fecha Fin:</label>
+                                        <input type="date" id="TimeF" name="fechaFin" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col"> 
+                                        <label class="col-form-label" for="Estate">Enlace:</label>
+                                        <input type="text" id="Estate" name="enlaceReunion" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="edi">Edicion:</label>
+                                        <input type="text" id="edi" name="EdicionID" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="d-flex justify-content-end">
+                                        <a type="submit" href="/admin/actividades" class="btn btn-primary">Submit</a>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="tab-pane fade" id="ponencia" role="tabpanel" aria-labelledby="ponencia-tab">
+                            form(action="/admin/actividades/agregar/ponencia" method="POST")
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="ActName">Nombre:</label>
+                                        <input type="text" id="ActName" name="nombre" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="Desc">Descripcion:</label>
+                                        <input type="text" id="Desc" name="descripcion" class="form-control" required> 
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="fechaI">Fecha Inicio:</label>
+                                        <input type="date" id="fechaI" name="fechaInicio" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="fechaF">Fecha Fin:</label>
+                                        <input type="date" id="TimeF" name="fechaFin" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col"> 
+                                        <label class="col-form-label" for="Estate">Enlace:</label>
+                                        <input type="text" id="Estate" name="enlaceReunion" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="Topic">Topico:</label>
+                                        <input type="text" id="Topico" name="topico" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="edi">Edicion:</label>
+                                        <input type="text" id="edi" name="EdicionID" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="d-flex justify-content-end">
+                                        <a type="submit" href="/admin/actividades" class="btn btn-primary">Submit</a>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="tab-pane fade" id="panel" role="tabpanel" aria-labelledby="panel-tab">
+                            form(action="/admin/actividades/agregar/panel" method="POST")
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="ActName">Nombre:</label>
+                                        <input type="text" id="ActName" name="nombre" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="Desc">Descripcion:</label>
+                                        <input type="text" id="Desc" name="descripcion" class="form-control" required> 
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="fechaI">Fecha Inicio:</label>
+                                        <input type="date" id="fechaI" name="fechaInicio" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="fechaF">Fecha Fin:</label>
+                                        <input type="date" id="TimeF" name="fechaFin" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col"> 
+                                        <label class="col-form-label" for="Estate">Enlace:</label>
+                                        <input type="text" id="Estate" name="enlaceReunion" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="Topic">Topico:</label>
+                                        <input type="text" id="Topico" name="topico" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="edi">Edicion:</label>
+                                        <input type="text" id="edi" name="EdicionID" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="d-flex justify-content-end">
+                                        <a type="submit" href="/admin/actividades" class="btn btn-primary">Submit</a>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="tab-pane fade" id="concurso" role="tabpanel" aria-labelledby="concurso-tab">
+                        form(action="/admin/actividades/agregar/concurso" method="POST")
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="ActName">Nombre:</label>
+                                        <input type="text" id="ActName" name="nombre" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="Desc">Descripcion:</label>
+                                        <input type="text" id="Desc" name="descripcion" class="form-control" required> 
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="fechaI">Fecha Inicio:</label>
+                                        <input type="date" id="fechaI" name="fechaInicio" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="fechaF">Fecha Fin:</label>
+                                        <input type="date" id="TimeF" name="fechaFin" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col"> 
+                                        <label class="col-form-label" for="Estate">Enlace:</label>
+                                        <input type="text" id="Estate" name="enlaceReunion" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="Bases">Bases:</label>
+                                        <input type="text" id="Bases" name="bases" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="col">
+                                        <label class="col-form-label" for="edi">Edicion:</label>
+                                        <input type="text" id="edi" name="EdicionID" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 row">
+                                    <div class="d-flex justify-content-end">
+                                        <a type="submit" href="/admin/actividades" class="btn btn-primary">Submit</a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+        </div>
+    </div>

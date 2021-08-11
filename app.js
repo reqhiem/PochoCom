@@ -14,6 +14,7 @@ require('dotenv').config()
 // define the path of routes
 let indexRouter = require('./routes/index');
 let adminRouter = require('./routes/admin')
+let visitorRouter = require('./routes/visitor')
 
 let app = express();
 
@@ -47,7 +48,7 @@ app.use(session({
 }))
 
 //Listen the routes
-app.use('/', indexRouter);
+app.use('/', visitorRouter);
 app.use('/admin/', adminRouter);
 
 // catch 404 and forward to error handler

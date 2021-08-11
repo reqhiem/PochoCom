@@ -1,0 +1,197 @@
+extends layouts
+
+block append resources
+    link(rel="stylesheet", href="/stylesheets/main.css")
+
+block content
+    .container-fluid(id="nav-bar-main")
+        .row(class="navbar navbar-dark bg-primary")
+            .col-6(class="d-flex justify-content-start")
+                p(id="title-main")='Semana de la computacion'
+            .col-6(class="d-flex justify-content-end")
+                .container-fluid
+                    .row
+                        .col-2
+                        .col-2
+                            //a(href="") 
+                        .col-2
+                            a(class="nav-link" href="#cronograma")="Cronograma" 
+                        .col-2
+                            a(class="nav-link"  href="#")="Contribuidores" 
+                        .col-2
+                            a(class="nav-link"  href="#")="Registrarse" 
+                        .col-2
+                            a(class="nav-link"  href="/login/")="Ingresar" 
+        
+    .container(class="shadow rounded mt-3" id="content-main")
+        .container-fluid(class="banner-main")
+            p(class="banner-label")="Edición"
+            p(class="banner-label")=edicion
+
+        .container(class="edicion-info")
+            .row
+                .col(class="d-flex justify-content-center")
+                    .container
+                        <i class="fas fa-calendar"></i>
+                        p='Fecha de Inicio:'
+                        p='21/09/2021'
+                .col(class="d-flex justify-content-center")
+                    .container
+                        <i class="fas fa-calendar"></i>
+                        p='Fecha de Inicio:'
+                        p='21/09/2021'
+        .container-fluid(class="mt-5 cronograma" id="cronograma")
+            h1(class="display-2")='Cronograma'
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            h3(class="display-5")='Día 1: 21/09/2021'
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            
+                            //Contenido del día
+                            .container(class="ponencia pon-card mb-3")
+                                .row
+                                    .col-1(class="")
+                                        div(class="rounded-circle pon-tipo-bread ")
+                                            p(class="display-3 fw-bold")='Po'
+                                    .col-6
+                                        .container-fluid
+                                            .row
+                                                h5='Titulo de la ponencia'
+                                            .row
+                                                p='Descripción'
+                                            .row
+                                                p='Tópicos' + 'IA, QGA'    
+                                            .row
+                                                if loggedIn
+                                                    a(href="") Enlace meet
+                                                else
+                                                    p='registrarse'
+                                    .col-3
+                                        .container-fluid
+                                            .row
+                                                h5='CARLOS ATENCIO CPP'
+                                            .row
+                                                p='Redes sociales'
+                                    .col-2 
+                                        .container-fluid(class="time-span")
+                                            .row
+                                                <i class="fas fa-clock"></i>11:40 AM
+                                            .row
+                                                | 12:50 PM
+
+                            .container(class="protocolar pro-card mb-3")
+                                .row
+                                    .col-1(class="")
+                                        div(class="rounded-circle pro-tipo-bread ")
+                                            p(class="display-3 fw-bold")='Pr'
+                                    .col-6
+                                        .container-fluid
+                                            .row
+                                                h5='Titulo del protocolar'
+                                            .row
+                                                p='Descripción'   
+                                            .row
+                                                p='Enlace meet'
+                                            
+                                    .col-3
+                                        .container-fluid
+                                            .row
+                                                h5='CARLOS ATENCIO CPP'
+                                            .row
+                                                p='Redes sociales'
+                                    .col-2 
+                                        .container-fluid(class="time-span")
+                                            .row
+                                                <i class="fas fa-clock"></i>11:40 AM
+                                            .row
+                                                | 12:50 PM
+
+                            .container(class="panel pan-card mb-3")
+                                .row
+                                    .col-1(class="")
+                                        div(class="rounded-circle pan-tipo-bread ")
+                                            p(class="display-3 fw-bold")='Pa'
+                                    .col-6
+                                        .container-fluid
+                                            .row
+                                                h5='Titulo del Panel'
+                                            .row
+                                                p='Descripción'
+                                            .row
+                                                p='Tópicos' + 'IA, QGA'    
+                                            .row
+                                                p='Enlace meet'
+                                    .col-3
+                                        .container-fluid
+                                            .row
+                                                h5='CARLOS ATENCIO CPP'
+                                            .row
+                                                p='Redes sociales'
+                                    .col-2 
+                                        .container-fluid(class="time-span")
+                                            .row
+                                                <i class="fas fa-clock"></i>11:40 AM
+                                            .row
+                                                | 12:50 PM
+                            .container(class="concurso con-card mb-3")
+                                .row
+                                    .col-1(class="")
+                                        div(class="rounded-circle con-tipo-bread ")
+                                            p(class="display-3 fw-bold")='Co'
+                                    .col-6
+                                        .container-fluid
+                                            .row
+                                                h5='Titulo del Concurso'
+                                            .row
+                                                p='Descripción'
+                                            .row
+                                                a(href="") Bases del concurso    
+                                            .row
+                                                p='Enlace meet'
+                                    .col-3
+                                        .container-fluid
+                                            .row
+                                                h5='CARLOS ATENCIO CPP'
+                                            .row
+                                                p='Redes sociales'
+                                    .col-2 
+                                        .container-fluid(class="time-span")
+                                            .row
+                                                <i class="fas fa-clock"></i>11:40 AM
+                                            .row
+                                                | 12:50 PM
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            h3(class="display-5")='Día 2: 21/09/2021'
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            |Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            h3(class="display-5")='Día 3: 21/09/2021'
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            |Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            

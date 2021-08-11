@@ -1,4 +1,4 @@
-extends layout 
+extends ../layout 
 
 block append styles
     link(rel="stylesheet", href="/stylesheets/login.css")
@@ -12,33 +12,22 @@ block content
                     <!-- Background image for card set in CSS! -->
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title text-center">Register</h5>
+                    <h5 class="card-title text-center">Ingresar</h5>
                     <form class="form-signin">
                         <div class="form-label-group">
                             <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
-                            <label for="inputUserame">Username</label>
+                            <label for="inputUserame">username</label>
                         </div>
-
-                        <div class="form-label-group">
-                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
-                            <label for="inputEmail">Email address</label>
-                        </div>
-                        
-                        <hr>
 
                         <div class="form-label-group">
                             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                             <label for="inputPassword">Password</label>
                         </div>
-                        
-                        <div class="form-label-group">
-                            <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required>
-                            <label for="inputConfirmPassword">Confirm password</label>
-                        </div>
 
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
-                        <a class="d-block text-center mt-2 small" href="#">Sign In</a>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Ingresar</button>
+                            <a class="d-block text-center mt-2 small" href="#">Registrarse</a>
                         <hr class="my-4">
+                        a(href="/admin/login") ¿Eres admin?
                     </form>
                 </div>
                 </div>

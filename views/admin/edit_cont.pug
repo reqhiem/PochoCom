@@ -1,0 +1,59 @@
+extends layout
+
+
+block content
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card-header">
+                    form(action="/admin/contribuidores/agregar" method="POST")
+                        <div class="form-outline mb-4 row">
+                            <div class="col">
+                                <label class="col-form-label" for="ActName">Nombre:</label>
+                                <input type="text" id="ActName" name="Nombre" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4 row">
+                            <div class="col">
+                                <label class="col-form-label" for="Uni">ApellidoPaterno:</label>
+                                <input type="text" id="Uni" name="apellidoPaterno" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4 row">
+                            <div class="col">
+                                <label class="col-form-label" for="Esp">ApellidoMaterno:</label>
+                                <input type="text" id="Esp" name="apellidoMaterno" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4 row">
+                            <div class="col">
+                                <label class="col-form-label" for="Desc">Especialidad:</label>
+                                <textarea type="text" class="form-control" name="Especialidad" id="Desc" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4 row">
+                            <div class="col">
+                                <label class="col-form-label" for="Email">E-mail:</label>
+                                <input type="email" name="email" id="Email" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-outline mb-4 row">
+                            <div class="col">
+                                <label class="col-form-label" for="EmailFa">Descripción:</label>
+                                <textarea type="text" id="EmailFa" name="Descripcion" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="form-outline mb-4 row">
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,76 @@
+extends layout
+
+block content
+    <div calss="container">
+        <form class="form">
+            <div class="row justify-content-end mb-4">
+                <div class="col-auto">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Edicion</option>
+                        <option value="1">2021</option>
+                        <option value="2">2020</option>
+                        <option value="3">2019</option>
+                    </select>
+                </div>
+                <div class="col-auto">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Día</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4</option>
+                        <option value="3">5</option>
+                    </select>
+                </div>
+                <div class="col-auto">
+                    <div class="input-group rounded">
+                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        <button class="input-group-text border-0" id="search-addon">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Horario inicio</th>
+                <th scope="col">Horario fin</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Enlace</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Participantes</th>
+                <th scope="col">Bases</th>
+                <th scope="col">Premios</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <th>05/08/2020</th>
+                <th>8:00 AM</th>
+                <th>9:00 AM</th>
+                <td>Nombre</td>
+                <th>estado</th>
+                <td>enlace</td>
+                <td>panel</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <button type="button" class="btn btn-primary">Editar</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    

@@ -1,0 +1,61 @@
+extends layout
+
+block content
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h3 class="text-center">CONFIRMAR ACTIVIDAD</h3>
+                <div class="card-header">
+                    <form role="form">
+                        <div class="form-outline mb-4 row">
+                            <div class="col">
+                                <label class="col-form-label" for="ActName">Nombre de la actividad:</label>
+                                <input type="text" id="ActName" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4 row">
+                            <div class="col">
+                                <label class="col-form-label" for="Date">Fecha:</label>
+                                <input type="date" id="Date" name="trip-start" value="2020-08-05"min="2019-01-01" max="2022-12-31">
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4 row">
+                            <div class="col">
+                                <label class="col-form-label" for="TimeI">Hora Inicio:</label>
+                                <input type="time" id="TimeI" name="TimeI" min="00:00" max="24:00" required>
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4 row">
+                            <div class="col">
+                                <label class="col-form-label" for="TimeF">Hora Fin:</label>
+                                <input type="time" id="TimeF" name="TimeF" min="00:00" max="24:00" required>
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4 row">
+                            <div class="col">
+                                <label class="col-form-label" for="Estate">Usuario:</label>
+                                <input type="text" id="Estate" class="form-control" />
+                            </div>
+                        </div>
+                        
+                        <div class="form-outline mb-4 row">
+                            <div class="col">
+                                <label class="col-form-label" for="Topic">Participantes:</label>
+                                <textarea class="form-control" id="Topic" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4 row">
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

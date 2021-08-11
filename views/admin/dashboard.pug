@@ -1,5 +1,62 @@
 extends layout
 
 block content
-    p
-        | Hola mundo
+    .container-fluid
+        .row
+            .col-8
+                h5='Ediciones'
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Año</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Inicio</th>
+                            <th scope="col">Fin</th>
+                            <th scope="col">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        each edicion in data
+                            <tr>
+                                th(scope="row")=edicion.dataValues.id
+                                td=edicion.dataValues.anio
+                                td=edicion.dataValues.nombre
+                                td=edicion.dataValues.fechaInicio
+                                td=edicion.dataValues.fechaFin
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                        a(href='/admin/edicion/eliminar/'+edicion.dataValues.id type="button" class="btn btn-danger")='Borrar'
+                                a(href='/admin/edicion/editar/'+edicion.dataValues.id type="button" class="btn btn-warning")='Editar'
+                                    </div>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+            .col-4
+                h5='Agregar Edición'
+
+                form(method='POST' action='/admin/edicion/agregar')
+                    <div class="row input-group mb-3">
+                        <span class="col-4 input-group-text" id="basic-addon1">Año</span>
+                        <input name='anio' type="text" class="col-8 form-control" placeholder="Ex. 2021" aria-label="anio" aria-describedby="basic-addon1" required>
+                    </div>
+                    <div class="row input-group mb-3">
+                        <span class="col-4 input-group-text" id="basic-addon1">Nombre</span>
+                        <input name='nombre' type="text" class="col-8 form-control" placeholder="Ex. Semana de la Computación" aria-label="nombre" aria-describedby="basic-addon1" required>
+                    </div>
+                    <div class="row input-group mb-3">
+                        <span class="col-4 input-group-text" id="basic-addon1">Inicio</span>
+                        <input name='fechaInicio' type="date" class="col-8 form-control" placeholder="Ex. 2021" aria-label="fecha_inicio" aria-describedby="basic-addon1" required>
+                    </div>
+                    <div class="row input-group mb-3">
+                        <span class="col-4 input-group-text" id="basic-addon1">Fin</span>
+                        <input name='fechaFin' type="date" class="col-8 form-control" placeholder="Ex. 2021" aria-label="fecha_fin" aria-describedby="basic-addon1" required>
+                    </div>
+                    .row(class="d-flex justify-content-center")
+                        .col-2
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+
+
+
+

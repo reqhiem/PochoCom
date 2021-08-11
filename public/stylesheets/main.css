@@ -109,3 +109,12 @@ body{
     font-size: 16px;
     color: rgb(56, 56, 56)
 }
+
+.Contribuidores{
+    font-family: 'Roboto Mono', monospace;
+}
+
+.edicion-info{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 24px;
+}

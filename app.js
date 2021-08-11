@@ -4,21 +4,20 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
-// For session management
+// Gestion de sesiones
 let session = require('express-session');
 let sessionConnection = require('express-mysql-session');
 let config = require('./config/config');
 require('dotenv').config()
 
 
-// define the path of routes
-let indexRouter = require('./routes/index');
+// Define el direccionamiento de las rutas
 let adminRouter = require('./routes/admin')
 let visitorRouter = require('./routes/visitor')
 
 let app = express();
 
-// view engine setup
+// Ver la configuracion del motor
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -28,7 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//For session and Cookie management
+//Para la gestion de sesiones y cookies
 const options = {
   host: 'localhost',
   port: 3306,
@@ -47,23 +46,22 @@ app.use(session({
   saveUninitialized: false,
 }))
 
-//Listen the routes
+//Escucha las rutas
 app.use('/', visitorRouter);
 app.use('/admin/', adminRouter);
-app.use('/visitor/', visitorRouter);
 
-// catch 404 and forward to error handler
+// catch 404 y reenvia el controlador de errores
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
+// Maneja los errores
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
+  // Establece locals, solo proporcionando error en el desarrollo 
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
+  // Renderiza la pagina de error
   res.status(err.status || 500);
   res.render('error');
 });

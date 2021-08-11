@@ -1,8 +1,23 @@
 # Proyecto Pocho's Com.
 
+## Propósito del proyecto
+El presente proyecto busca desarrollar un sitio web para "La semana de computación", cuyo propósito es la visualización e incripción en actividades académicas referidas a las ramas de Ciencia de la computación independientemente de la universidad o situación academica de los visitantes. 
+
+## Funciones del proyecto
+
+1. El sistema cuenta con login para diferenciar de usuario y administrador
+2. El administrador es capaz de crear contribuidores y actividades.
+3. El administrador es capaz de editar contribuidores y actividades.
+4. El dministrador es capaz de visuazlizar contribuidores y actividades.
+5. El administrador es capaz de eliminar contribuidores y actividades.
+6. El visitante puede escoger que edición visualizar.
+7. El visitante puede visualiar las actividaddes y contribuidores del evento
+8. El visitante para poder visualizar los enlaces de las actividades debe inscribirse previamente.
+
+
 ## Descripción
 
-El presente trabajo corresponde al proyecto final del curso de Ingeniería de Software 1 del programa de Ciencia de la Computación, para el cual se aplicó todos los conocimientos adquiridos para el desarrollo de un sistema con las prácticas y estándares propios del área Ingeniería de Software.
+El presente proyecto corresponde al proyecto final del curso de Ingeniería de Software 1 del programa de Ciencia de la Computación, para el cual se aplicó todos los conocimientos adquiridos para el desarrollo de un sistema con las prácticas y estándares propios del área Ingeniería de Software.
 
 ## Objetivo
 
@@ -35,6 +50,60 @@ El sistema web en cuestión obedece al siguiente diagrama de Casos de Uso.
 
 ![Diseño significativo](./public/images/AS_significativo.png)
 
+## Práctica de código legible aplicadas
+
+1. Los nombres de las variable tienen un significativo y son pronunciables
+    ``` {js}
+    const currentDate = moment().format("YYYY/MM/DD");
+    ```
+2. Se Utilizo el mismo vocabulario para el mismo tipo de variable
+    ``` {js}
+    getUserInfo();
+    
+    getClientData();
+
+    getCustomerRecord();
+    ```
+3. La Utilización de variables explicativas
+    
+4. Se procuro usar 2 o menos argumentos en las funciones
+    ```{js}
+    const eliminarEdicion = (req,res) => {
+        let id = req.params.id
+        Edicion.destroy({
+            where: {
+                id: id
+            }
+        }).then(edicion => {
+            res.redirect('/admin/')
+        })
+    }
+    ```
+5. Cada función realiza solo realiza una tarea
+    ```{js}
+    function emailActiveClients(clients) {
+        clients.filter(isActiveClient).forEach(email);
+    }
+
+    function isActiveClient(client) {
+        const clientRecord = database.lookup(client);
+        return clientRecord.isActive();
+    }
+
+    ```
+6. Los nombres de las funciones realizan lo mencionado
+    ``` {js}
+    const loginPageController = (req,res) =>{
+        res.render('visitor/login', {page:'login'})
+    }
+    ```
+7. Se removio el  "dead code"
+    ``` {js}
+    ```
+
+Basado en el libro
+> Clean Code: A Handbook of Agile Software Craftsmanship 
+> --<cite> Robert C. Martin's.
 
 ## Estilos de programación:
 

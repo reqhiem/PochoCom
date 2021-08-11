@@ -1,59 +1,38 @@
 extends layout
 
-
 block content
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <div class="card-header">
-                    form(action="/admin/contribuidores/agregar" method="POST")
-                        <div class="form-outline mb-4 row">
-                            <div class="col">
-                                <label class="col-form-label" for="ActName">Nombre:</label>
-                                <input type="text" id="ActName" name="Nombre" class="form-control" />
-                            </div>
-                        </div>
-
-                        <div class="form-outline mb-4 row">
-                            <div class="col">
-                                <label class="col-form-label" for="Uni">ApellidoPaterno:</label>
-                                <input type="text" id="Uni" name="apellidoPaterno" class="form-control" />
-                            </div>
-                        </div>
-
-                        <div class="form-outline mb-4 row">
-                            <div class="col">
-                                <label class="col-form-label" for="Esp">ApellidoMaterno:</label>
-                                <input type="text" id="Esp" name="apellidoMaterno" class="form-control" />
-                            </div>
-                        </div>
-
-                        <div class="form-outline mb-4 row">
-                            <div class="col">
-                                <label class="col-form-label" for="Desc">Especialidad:</label>
-                                <textarea type="text" class="form-control" name="Especialidad" id="Desc" rows="3"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-outline mb-4 row">
-                            <div class="col">
-                                <label class="col-form-label" for="Email">E-mail:</label>
-                                <input type="email" name="email" id="Email" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="form-outline mb-4 row">
-                            <div class="col">
-                                <label class="col-form-label" for="EmailFa">Descripción:</label>
-                                <textarea type="text" id="EmailFa" name="Descripcion" class="form-control" >
-                            </div>
-                        </div>
-                        <div class="form-outline mb-4 row">
-                            <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </div>
+    .container-fluid
+        .row
+            .col-4
                 
-                </div>
-            </div>
-        </div>
-    </div>
+            .col-4
+                h5='Editar Edición'
+
+                form(action="/admin/contribuidores/actualizar/"+contribuidor.dataValues.id method="POST")
+                    <div class="row input-group mb-3">
+                        <span class="col-4 input-group-text" id="basic-addon1">Nombre:</span>
+                        input(name='nombre' type="text" class="col-8 form-control" placeholder='Nombre' aria-label="nombre" aria-describedby="basic-addon1" value=contribuidor.dataValues.nombre required)
+                    </div>
+                    <div class="row input-group mb-3">
+                        <span class="col-4 input-group-text" id="basic-addon1">ApellidoPaterno:</span>
+                        input(name='apellPaterno' type="text" class="col-8 form-control" placeholder="Ap. pat." aria-label="apellido_paterno" aria-describedby="basic-addon1" value=contribuidor.dataValues.apellPaterno required)
+                    </div>
+                    <div class="row input-group mb-3">
+                        <span class="col-4 input-group-text" id="basic-addon1">ApellidoMaterno:</span>
+                        input(name='apellMaterno' type="text" class="col-8 form-control" placeholder="Ap. mat." aria-label="apellido_materno" aria-describedby="basic-addon1" value=contribuidor.dataValues.apellMaterno required)
+                    </div>
+                    <div class="row input-group mb-3">
+                        <span class="col-4 input-group-text" id="basic-addon1">Especialidad:</span>
+                        input(name='especialidad' type="text" class="col-8 form-control" placeholder="Ex. 2021" aria-label="especialidad" aria-describedby="basic-addon1" value=contribuidor.dataValues.especialidad required)
+                    </div>
+                    <div class="row input-group mb-3">
+                        <span class="col-4 input-group-text" id="basic-addon1">E-mail:</span>
+                        input(name='email' type="email" class="col-8 form-control" placeholder="E-mail" aria-label="email" aria-describedby="basic-addon1" value=contribuidor.dataValues.email required)
+                    </div>
+                    <div class="row input-group mb-3">
+                        <span class="col-4 input-group-text" id="basic-addon1">Descripción:</span>
+                        input(name='descripcion' type="text" class="col-8 form-control" placeholder="Desc." aria-label="descripcion" aria-describedby="basic-addon1" value=contribuidor.dataValues.descripcion required)
+                    </div>
+                    .row(class="d-flex justify-content-center")
+                        .col-2
+                            <button type="submit" class="btn btn-primary">Confirmar</button>

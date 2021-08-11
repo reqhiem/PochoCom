@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Module dependencies.
+ * Dependencias del Module.
  */
 
 let app = require('../app');
@@ -9,20 +9,20 @@ let debug = require('debug')('pochoscom:server');
 let http = require('http');
 
 /**
- * Get port from environment and store in Express.
+ * GET puerto de entorno y guardarlo en Express
  */
 
 let port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
- * Create HTTP server.
+ * Crea un servidor HTTP.
  */
 
 let server = http.createServer(app);
 
 /**
- * Listen on provided port, on all network interfaces.
+ * Escucha el puerto porvisto en todas las interfaces de red
  */
 /*Connect to DB*/
 let {sequelize} = require('../models')
@@ -39,19 +39,19 @@ server.on('error', onError);
 server.on('listening', onListening);
 
 /**
- * Normalize a port into a number, string, or false.
+ * Normaliza el puerto en un numero,cadena o falso
  */
 
 function normalizePort(val) {
   let port = parseInt(val, 10);
 
   if (isNaN(port)) {
-    // named pipe
+    //conducto nombrado
     return val;
   }
 
   if (port >= 0) {
-    // port number
+    // numero de puerto
     return port;
   }
 
@@ -59,7 +59,7 @@ function normalizePort(val) {
 }
 
 /**
- * Event listener for HTTP server "error" event.
+ * Detector de eventos para el evento  "error" del servidor HTTP
  */
 
 function onError(error) {
@@ -71,7 +71,7 @@ function onError(error) {
     ? 'Pipe ' + port
     : 'Port ' + port;
 
-  // handle specific listen errors with friendly messages
+  // Maneja los errores de escucha especificos con mensajes amigables
   switch (error.code) {
     case 'EACCES':
       console.error(bind + ' requires elevated privileges');
@@ -87,7 +87,7 @@ function onError(error) {
 }
 
 /**
- * Event listener for HTTP server "listening" event.
+ * Detector de eventos para el evento "listening" del servidor HTTP
  */
 
 function onListening() {

@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    .container-fluid
+        .row
+            .col-4
+                
+            .col-4
+                h5='Editar Edición'
+
+                form(method='POST' action='/admin/edicion/actualizar/'+edicion.dataValues.id)
+                    <div class="row input-group mb-3">
+                        <span class="col-4 input-group-text" id="basic-addon1">Año</span>
+                        input(name='anio' type="text" class="col-8 form-control" placeholder="Ex. 2021" aria-label="anio" aria-describedby="basic-addon1" value=edicion.dataValues.anio required)
+                    </div>
+                    <div class="row input-group mb-3">
+                        <span class="col-4 input-group-text" id="basic-addon1">Nombre</span>
+                        input(name='nombre' type="text" class="col-8 form-control" placeholder="Ex. Semana de la Computación" aria-label="nombre" aria-describedby="basic-addon1" value=edicion.dataValues.nombre required)
+                    </div>
+                    <div class="row input-group mb-3">
+                        <span class="col-4 input-group-text" id="basic-addon1">Inicio</span>
+                        input(name='fechaInicio' type="date" class="col-8 form-control" placeholder="Ex. 2021" aria-label="fecha_inicio" aria-describedby="basic-addon1" value=edicion.dataValues.fechaInicio required)
+                    </div>
+                    <div class="row input-group mb-3">
+                        <span class="col-4 input-group-text" id="basic-addon1">Fin</span>
+                        input(name='fechaFin' type="date" class="col-8 form-control" placeholder="Ex. 2021" aria-label="fecha_fin" aria-describedby="basic-addon1" value=edicion.dataValues.fechaFin required)
+                    </div>
+                    .row(class="d-flex justify-content-center")
+                        .col-2
+                            <button type="submit" class="btn btn-primary">Confirmar</button>

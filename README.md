@@ -64,9 +64,7 @@ El sistema web en cuestión obedece al siguiente diagrama de Casos de Uso.
 
     getCustomerRecord();
     ```
-3. La Utilización de variables explicativas
-    
-4. Se procuro usar 2 o menos argumentos en las funciones
+3. Se procuro usar 2 o menos argumentos en las funciones
     ```{js}
     const eliminarEdicion = (req,res) => {
         let id = req.params.id
@@ -79,7 +77,7 @@ El sistema web en cuestión obedece al siguiente diagrama de Casos de Uso.
         })
     }
     ```
-5. Cada función realiza solo realiza una tarea
+4. Cada función realiza solo realiza una tarea
     ```{js}
     function emailActiveClients(clients) {
         clients.filter(isActiveClient).forEach(email);
@@ -91,16 +89,22 @@ El sistema web en cuestión obedece al siguiente diagrama de Casos de Uso.
     }
 
     ```
-6. Los nombres de las funciones realizan lo mencionado
+5. Los nombres de las funciones realizan lo mencionado
     ``` {js}
     const loginPageController = (req,res) =>{
         res.render('visitor/login', {page:'login'})
     }
     ```
-7. Se removio el  "dead code"
+6. Se removio el  "dead code"
     ``` {js}
     ```
-
+7. Se comento el código que tenia lógica de negocio
+``` {js}
+    // Pagina de logueo
+    const loginPageController = (req,res) =>{
+        res.render('visitor/login', {page:'login'})
+    }
+```
 Basado en el libro
 > Clean Code: A Handbook of Agile Software Craftsmanship 
 > --<cite> Robert C. Martin's.

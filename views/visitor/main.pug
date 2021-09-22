@@ -53,119 +53,123 @@ block content
                         <div class="accordion-body">
                             
                             //Contenido del día
-                            .container(class="ponencia pon-card mb-3")
-                                .row
-                                    .col-1(class="")
-                                        div(class="rounded-circle pon-tipo-bread ")
-                                            p(class="display-3 fw-bold")='Po'
-                                    .col-6
-                                        .container-fluid
-                                            .row
-                                                h5='Titulo de la ponencia'
-                                            .row
-                                                p='Descripción'
-                                            .row
-                                                p='Tópicos' + 'IA, QGA'    
-                                            .row
-                                                if loggedIn
-                                                    a(href="") Enlace meet
-                                                else
-                                                    p='registrarse'
-                                    .col-3
-                                        .container-fluid
-                                            .row
-                                                h5='CARLOS ATENCIO'
-                                            .row
-                                                p='Redes sociales'
-                                    .col-2 
-                                        .container-fluid(class="time-span")
-                                            .row
-                                                <i class="fas fa-clock"></i>11:40 AM
-                                            .row
-                                                | 12:50 PM
+                            each actividad in actividadesOne[0]
 
-                            .container(class="protocolar pro-card mb-3")
-                                .row
-                                    .col-1(class="")
-                                        div(class="rounded-circle pro-tipo-bread ")
-                                            p(class="display-3 fw-bold")='Pr'
-                                    .col-6
-                                        .container-fluid
-                                            .row
-                                                h5='Titulo del protocolar'
-                                            .row
-                                                p='Descripción'   
-                                            .row
-                                                p='Enlace meet'
-                                            
-                                    .col-3
-                                        .container-fluid
-                                            .row
-                                                h5='CARLOS ATENCIO'
-                                            .row
-                                                p='Redes sociales'
-                                    .col-2 
-                                        .container-fluid(class="time-span")
-                                            .row
-                                                <i class="fas fa-clock"></i>11:40 AM
-                                            .row
-                                                | 12:50 PM
-
-                            .container(class="panel pan-card mb-3")
-                                .row
-                                    .col-1(class="")
-                                        div(class="rounded-circle pan-tipo-bread ")
-                                            p(class="display-3 fw-bold")='Pa'
-                                    .col-6
-                                        .container-fluid
-                                            .row
-                                                h5='Titulo del Panel'
-                                            .row
-                                                p='Descripción'
-                                            .row
-                                                p='Tópicos' + 'IA, QGA'    
-                                            .row
-                                                p='Enlace meet'
-                                    .col-3
-                                        .container-fluid
-                                            .row
-                                                h5='CARLOS ATENCIO'
-                                            .row
-                                                p='Redes sociales'
-                                    .col-2 
-                                        .container-fluid(class="time-span")
-                                            .row
-                                                <i class="fas fa-clock"></i>11:40 AM
-                                            .row
-                                                | 12:50 PM
-                            .container(class="concurso con-card mb-3")
-                                .row
-                                    .col-1(class="")
-                                        div(class="rounded-circle con-tipo-bread ")
-                                            p(class="display-3 fw-bold")='Co'
-                                    .col-6
-                                        .container-fluid
-                                            .row
-                                                h5='Titulo del Concurso'
-                                            .row
-                                                p='Descripción'
-                                            .row
-                                                a(href="") Bases del concurso    
-                                            .row
-                                                p='Enlace meet'
-                                    .col-3
-                                        .container-fluid
-                                            .row
-                                                h5='CARLOS ATENCIO'
-                                            .row
-                                                p='Redes sociales'
-                                    .col-2 
-                                        .container-fluid(class="time-span")
-                                            .row
-                                                <i class="fas fa-clock"></i>11:40 AM
-                                            .row
-                                                | 12:50 PM
-
+                                if actividad.isPonencia
+                                    .container(class="ponencia pon-card mb-3")
+                                        .row
+                                            .col-1(class="")
+                                                div(class="rounded-circle pon-tipo-bread ")
+                                                    p(class="display-3 fw-bold")='Po'
+                                            .col-6
+                                                .container-fluid
+                                                    .row
+                                                        h5=actividad.nombre
+                                                    .row
+                                                        p=actividad.descripcion
+                                                    .row
+                                                        p='Tópicos: ' + actividad.topico    
+                                                    .row
+                                                        if loggedIn
+                                                            a(href=actividad.enlaceReunion) Enlace meet
+                                                        else
+                                                            p='registrarse'
+                                            .col-3
+                                                .container-fluid
+                                                    .row
+                                                        h5=''
+                                                    .row
+                                                        p='Redes sociales'
+                                            .col-2 
+                                                .container-fluid(class="time-span")
+                                                    .row
+                                                        <i class="fas fa-clock"></i>
+                                                        p=actividad.fechaInicio
+                                                    .row
+                                                        p=actividad.fechaFin
+                                else if actividad.isProtocolar
+                                    .container(class="protocolar pro-card mb-3")
+                                        .row
+                                            .col-1(class="")
+                                                div(class="rounded-circle pro-tipo-bread ")
+                                                    p(class="display-3 fw-bold")='Pr'
+                                            .col-6
+                                                .container-fluid
+                                                    .row
+                                                        h5='Titulo del protocolar'
+                                                    .row
+                                                        p='Descripción'   
+                                                    .row
+                                                        p='Enlace meet'
+                                                    
+                                            .col-3
+                                                .container-fluid
+                                                    .row
+                                                        h5=''
+                                                    .row
+                                                        p='Redes sociales'
+                                            .col-2 
+                                                .container-fluid(class="time-span")
+                                                    .row
+                                                        <i class="fas fa-clock"></i>11:40 AM
+                                                    .row
+                                                        | 12:50 PM
+                                else if actividad.isPanel
+                                    .container(class="panel pan-card mb-3")
+                                        .row
+                                            .col-1(class="")
+                                                div(class="rounded-circle pan-tipo-bread ")
+                                                    p(class="display-3 fw-bold")='Pa'
+                                            .col-6
+                                                .container-fluid
+                                                    .row
+                                                        h5='Titulo del Panel'
+                                                    .row
+                                                        p='Descripción'
+                                                    .row
+                                                        p='Tópicos' + 'IA, QGA'    
+                                                    .row
+                                                        p='Enlace meet'
+                                            .col-3
+                                                .container-fluid
+                                                    .row
+                                                        h5=''
+                                                    .row
+                                                        p='Redes sociales'
+                                            .col-2 
+                                                .container-fluid(class="time-span")
+                                                    .row
+                                                        <i class="fas fa-clock"></i>11:40 AM
+                                                    .row
+                                                        | 12:50 PM
+                                else if actividad.isConcurso
+                                    .container(class="concurso con-card mb-3")
+                                        .row
+                                            .col-1(class="")
+                                                div(class="rounded-circle con-tipo-bread ")
+                                                    p(class="display-3 fw-bold")='Co'
+                                            .col-6
+                                                .container-fluid
+                                                    .row
+                                                        h5='Titulo del Concurso'
+                                                    .row
+                                                        p='Descripción'
+                                                    .row
+                                                        a(href="") Bases del concurso    
+                                                    .row
+                                                        p='Enlace meet'
+                                            .col-3
+                                                .container-fluid
+                                                    .row
+                                                        h5=''
+                                                    .row
+                                                        p='Redes sociales'
+                                            .col-2 
+                                                .container-fluid(class="time-span")
+                                                    .row
+                                                        <i class="fas fa-clock"></i>11:40 AM
+                                                    .row
+                                                        | 12:50 PM
                         </div>
                     </div>
                 </div>
@@ -177,7 +181,124 @@ block content
                     </h2>
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
-                            |Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.
+                            //Contenido del día
+                            each actividad in actividadesTwo[0]
+
+                                if actividad.isPonencia
+                                    .container(class="ponencia pon-card mb-3")
+                                        .row
+                                            .col-1(class="")
+                                                div(class="rounded-circle pon-tipo-bread ")
+                                                    p(class="display-3 fw-bold")='Po'
+                                            .col-6
+                                                .container-fluid
+                                                    .row
+                                                        h5=actividad.nombre
+                                                    .row
+                                                        p=actividad.descripcion
+                                                    .row
+                                                        p='Tópicos: ' + actividad.topico    
+                                                    .row
+                                                        if loggedIn
+                                                            a(href=actividad.enlaceReunion) Enlace meet
+                                                        else
+                                                            p='registrarse'
+                                            .col-3
+                                                .container-fluid
+                                                    .row
+                                                        h5=''
+                                                    .row
+                                                        p='Redes sociales'
+                                            .col-2 
+                                                .container-fluid(class="time-span")
+                                                    .row
+                                                        <i class="fas fa-clock"></i>
+                                                        p=actividad.fechaInicio
+                                                    .row
+                                                        p=actividad.fechaFin
+                                else if actividad.isProtocolar
+                                    .container(class="protocolar pro-card mb-3")
+                                        .row
+                                            .col-1(class="")
+                                                div(class="rounded-circle pro-tipo-bread ")
+                                                    p(class="display-3 fw-bold")='Pr'
+                                            .col-6
+                                                .container-fluid
+                                                    .row
+                                                        h5='Titulo del protocolar'
+                                                    .row
+                                                        p='Descripción'   
+                                                    .row
+                                                        p='Enlace meet'
+                                                    
+                                            .col-3
+                                                .container-fluid
+                                                    .row
+                                                        h5=''
+                                                    .row
+                                                        p='Redes sociales'
+                                            .col-2 
+                                                .container-fluid(class="time-span")
+                                                    .row
+                                                        <i class="fas fa-clock"></i>11:40 AM
+                                                    .row
+                                                        | 12:50 PM
+                                else if actividad.isPanel
+                                    .container(class="panel pan-card mb-3")
+                                        .row
+                                            .col-1(class="")
+                                                div(class="rounded-circle pan-tipo-bread ")
+                                                    p(class="display-3 fw-bold")='Pa'
+                                            .col-6
+                                                .container-fluid
+                                                    .row
+                                                        h5='Titulo del Panel'
+                                                    .row
+                                                        p='Descripción'
+                                                    .row
+                                                        p='Tópicos' + 'IA, QGA'    
+                                                    .row
+                                                        p='Enlace meet'
+                                            .col-3
+                                                .container-fluid
+                                                    .row
+                                                        h5=''
+                                                    .row
+                                                        p='Redes sociales'
+                                            .col-2 
+                                                .container-fluid(class="time-span")
+                                                    .row
+                                                        <i class="fas fa-clock"></i>11:40 AM
+                                                    .row
+                                                        | 12:50 PM
+                                else if actividad.isConcurso
+                                    .container(class="concurso con-card mb-3")
+                                        .row
+                                            .col-1(class="")
+                                                div(class="rounded-circle con-tipo-bread ")
+                                                    p(class="display-3 fw-bold")='Co'
+                                            .col-6
+                                                .container-fluid
+                                                    .row
+                                                        h5='Titulo del Concurso'
+                                                    .row
+                                                        p='Descripción'
+                                                    .row
+                                                        a(href="") Bases del concurso    
+                                                    .row
+                                                        p='Enlace meet'
+                                            .col-3
+                                                .container-fluid
+                                                    .row
+                                                        h5=''
+                                                    .row
+                                                        p='Redes sociales'
+                                            .col-2 
+                                                .container-fluid(class="time-span")
+                                                    .row
+                                                        <i class="fas fa-clock"></i>11:40 AM
+                                                    .row
+                                                        | 12:50 PM
                         </div>
                     </div>
                 </div>
@@ -214,7 +335,7 @@ block content
                                             .col-3
                                                 .container-fluid
                                                     .row
-                                                        h5='CARLOS ATENCIO'
+                                                        h5=''
                                                     .row
                                                         p='Redes sociales'
                                             .col-2 
@@ -242,7 +363,7 @@ block content
                                             .col-3
                                                 .container-fluid
                                                     .row
-                                                        h5='CARLOS ATENCIO'
+                                                        h5=''
                                                     .row
                                                         p='Redes sociales'
                                             .col-2 
@@ -270,7 +391,7 @@ block content
                                             .col-3
                                                 .container-fluid
                                                     .row
-                                                        h5='CARLOS ATENCIO'
+                                                        h5=''
                                                     .row
                                                         p='Redes sociales'
                                             .col-2 
@@ -298,7 +419,7 @@ block content
                                             .col-3
                                                 .container-fluid
                                                     .row
-                                                        h5='CARLOS ATENCIO'
+                                                        h5=''
                                                     .row
                                                         p='Redes sociales'
                                             .col-2 
@@ -318,7 +439,124 @@ block content
                     </h2>
                     <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
-                            |Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.
+                            //Contenido del día
+                            each actividad in actividadesFour[0]
+
+                                if actividad.isPonencia
+                                    .container(class="ponencia pon-card mb-3")
+                                        .row
+                                            .col-1(class="")
+                                                div(class="rounded-circle pon-tipo-bread ")
+                                                    p(class="display-3 fw-bold")='Po'
+                                            .col-6
+                                                .container-fluid
+                                                    .row
+                                                        h5=actividad.nombre
+                                                    .row
+                                                        p=actividad.descripcion
+                                                    .row
+                                                        p='Tópicos: ' + actividad.topico    
+                                                    .row
+                                                        if loggedIn
+                                                            a(href=actividad.enlaceReunion) Enlace meet
+                                                        else
+                                                            p='registrarse'
+                                            .col-3
+                                                .container-fluid
+                                                    .row
+                                                        h5=''
+                                                    .row
+                                                        p='Redes sociales'
+                                            .col-2 
+                                                .container-fluid(class="time-span")
+                                                    .row
+                                                        <i class="fas fa-clock"></i>
+                                                        p=actividad.fechaInicio
+                                                    .row
+                                                        p=actividad.fechaFin
+                                else if actividad.isProtocolar
+                                    .container(class="protocolar pro-card mb-3")
+                                        .row
+                                            .col-1(class="")
+                                                div(class="rounded-circle pro-tipo-bread ")
+                                                    p(class="display-3 fw-bold")='Pr'
+                                            .col-6
+                                                .container-fluid
+                                                    .row
+                                                        h5='Titulo del protocolar'
+                                                    .row
+                                                        p='Descripción'   
+                                                    .row
+                                                        p='Enlace meet'
+                                                    
+                                            .col-3
+                                                .container-fluid
+                                                    .row
+                                                        h5=''
+                                                    .row
+                                                        p='Redes sociales'
+                                            .col-2 
+                                                .container-fluid(class="time-span")
+                                                    .row
+                                                        <i class="fas fa-clock"></i>11:40 AM
+                                                    .row
+                                                        | 12:50 PM
+                                else if actividad.isPanel
+                                    .container(class="panel pan-card mb-3")
+                                        .row
+                                            .col-1(class="")
+                                                div(class="rounded-circle pan-tipo-bread ")
+                                                    p(class="display-3 fw-bold")='Pa'
+                                            .col-6
+                                                .container-fluid
+                                                    .row
+                                                        h5='Titulo del Panel'
+                                                    .row
+                                                        p='Descripción'
+                                                    .row
+                                                        p='Tópicos' + 'IA, QGA'    
+                                                    .row
+                                                        p='Enlace meet'
+                                            .col-3
+                                                .container-fluid
+                                                    .row
+                                                        h5=''
+                                                    .row
+                                                        p='Redes sociales'
+                                            .col-2 
+                                                .container-fluid(class="time-span")
+                                                    .row
+                                                        <i class="fas fa-clock"></i>11:40 AM
+                                                    .row
+                                                        | 12:50 PM
+                                else if actividad.isConcurso
+                                    .container(class="concurso con-card mb-3")
+                                        .row
+                                            .col-1(class="")
+                                                div(class="rounded-circle con-tipo-bread ")
+                                                    p(class="display-3 fw-bold")='Co'
+                                            .col-6
+                                                .container-fluid
+                                                    .row
+                                                        h5='Titulo del Concurso'
+                                                    .row
+                                                        p='Descripción'
+                                                    .row
+                                                        a(href="") Bases del concurso    
+                                                    .row
+                                                        p='Enlace meet'
+                                            .col-3
+                                                .container-fluid
+                                                    .row
+                                                        h5=''
+                                                    .row
+                                                        p='Redes sociales'
+                                            .col-2 
+                                                .container-fluid(class="time-span")
+                                                    .row
+                                                        <i class="fas fa-clock"></i>11:40 AM
+                                                    .row
+                                                        | 12:50 PM
                         </div>
                     </div>
                 </div>

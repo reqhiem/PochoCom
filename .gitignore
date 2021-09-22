@@ -1,4 +1,5 @@
 .env
 config/
-.gitignore
-node_modules/
+/node_modules/
+.scannerwork/
+sonar-project.properties
